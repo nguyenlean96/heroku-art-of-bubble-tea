@@ -17,6 +17,7 @@ const devConfig: Configuration = {
     static: path.join(__dirname, 'dist'),
     historyApiFallback: true,
     port: 3000,
+    hot: true,
     open: true,
     client: {
       overlay: {
