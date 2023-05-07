@@ -6,12 +6,20 @@ const config: WebpackConfig = {
   entry: './index.tsx',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].[contenthash:8].bundle.js', // '[name].bundle.js',
-    chunkFilename: '[name].[chunkhash:8].chunk.js',
+    filename: '[name].bundle.js',
     publicPath: '/',
-    clean: true
+    clean: true,
   },
   context: path.resolve(__dirname, 'src'),
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx|ts|tsx)$/,
+        exclude: /(vendor|node_modules|dist)/,
+        use: 'babel-loader',
+      },
+    ],
+  },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
