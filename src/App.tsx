@@ -1,6 +1,13 @@
-import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdb-react-ui-kit';
-import { KF_TEA_LIST } from '../src/constants';
-import { shuffleArray } from '../src/utils';
+import {
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBBtn,
+  MDBListGroup,
+  MDBListGroupItem,
+} from 'mdb-react-ui-kit';
+import { KF_TEA_LIST } from './constants';
+import { shuffleArray } from './utils';
 import { useReducer } from 'react';
 function App() {
   const [_, forceUpdate] = useReducer((x) => x + 1, 0);
@@ -16,11 +23,17 @@ function App() {
       </MDBRow>
       <MDBRow>
         <MDBCol>
-          <ol>
+          <MDBListGroup light numbered>
             {shuffleArray(KF_TEA_LIST).map((tea) => (
-              <li key={tea.toUpperCase()}>{tea}</li>
+              <MDBListGroupItem key={tea.name.toUpperCase()}>
+                <p>{tea.name}</p>
+                <div>Syrup/Powder: {tea.syrup}</div>
+                <div>Tea/Water: {tea.tea}</div>
+                <div>Honey: {tea.honey}</div>
+                <div>Note: {tea.note}</div>
+              </MDBListGroupItem>
             ))}
-          </ol>
+          </MDBListGroup>
         </MDBCol>
       </MDBRow>
     </MDBContainer>
