@@ -12,7 +12,7 @@ const CMF: KFTea[] = [
   {
     name: 'CMF Black Tea',
     syrup: null,
-    tea: 'Black Tea: 240 - 180 - 140 ml',
+    tea: 'Black Tea: 180 - 140 - 100 ml',
     water: '60 -40 -20 ml',
     honey: '1.2 - 0.9 - 0.7',
     note: null,
@@ -22,7 +22,7 @@ const CMF: KFTea[] = [
     syrup: null,
     tea: '300 - 220 - 180 ml',
     water: null,
-    honey: '1.0 - 0.98 - 0.6',
+    honey: '1.0 - 0.8 - 0.6',
     note: null,
   },
   {
@@ -59,16 +59,69 @@ const CMF: KFTea[] = [
   },
 ];
 
-const ORIGINAL = [
-  'Jin Xuan Oolong Tea',
-  'Assam Black Tea',
-  'Jasmine Green Tea',
-  'Winter Melon Drink',
-  'Power Taro Pudding Pearl Milk',
-  'Taro Sago',
+const ORIGINAL: KFTea[] = [
+  {
+    name: 'Jin Xuan Oolong Tea',
+    syrup: null,
+    tea: '360-260-200ml',
+    water: null,
+    honey: '1.2-0.9-0.7',
+    note: null,
+  },
+  {
+    name: 'Assam Black Tea',
+    syrup: null,
+    tea: '180-140-100ml',
+    water: '100-80-60ml',
+    honey: '1.5-1.2-1.0',
+    note: null,
+  },
+  {
+    name: 'Jasmine Green Tea',
+    syrup: null,
+    tea: '280-200-160ml',
+    water: null,
+    honey: '1.4-1.0-0.8',
+    note: null,
+  },
+  {
+    name: 'Winter Melon Drink',
+    syrup: null,
+    tea: '380 (40ml water)-300-240ml',
+    water: null,
+    honey: null,
+    note: null,
+  },
 ];
 
 const LATTE = [
+  {
+    name: 'Pearl Latte with Brown Sugar',
+    syrup: null,
+    tea: '300-200ml',
+    water: null,
+    honey: null,
+    note: 'Pearl 180-120',
+  },
+  {
+    name: 'Black Tea Latte',
+    syrup: null,
+    tea: '160-120-100ml',
+    milk: '180-140-120',
+    water: null,
+    honey: '1.4-1.0-0.8',
+    note: 'Can change to green tea or Oolong',
+  },
+  {
+    name: 'Chocolate Latte',
+    syrup: '3ts 2ts 1ts',
+    tea: null,
+    water: '100-80-60',
+    honey: '0.6-0.4-0.3',
+    note: null,
+  },
+];
+const LATTE1 = [
   'Pearl Latte with Brown Sugar',
   'Black Tea Latte',
   'Chocolate Latte',
@@ -77,6 +130,24 @@ const LATTE = [
 ];
 
 const UNCATEGORIZED = [
+  {
+    name: 'Power Taro Pudding Pearl Milk',
+    syrup: null,
+    tea: 'Milk: 200ml',
+    water: null,
+    honey: null,
+    note: 'Pearl Pudding Taro: 80 + 100 + 160',
+  },
+  {
+    name: 'Taro Sago',
+    syrup: null,
+    tea: 'Milk: 200ml',
+    water: null,
+    honey: '0.3',
+    note: 'Sago + Taro: 130 - 160g',
+  },
+];
+const UNCATEGORIZED1 = [
   'Rose Oolong Tea',
   'Grape Fruit Green Tea with Agar BB',
   'Winter Melon with Lemon',
@@ -110,4 +181,4 @@ const MILK_TEA = [
   'Rose Milk Tea',
 ];
 
-export const KF_TEA_LIST = CMF;
+export const KF_TEA_LIST = CMF.concat(ORIGINAL, LATTE, UNCATEGORIZED);
