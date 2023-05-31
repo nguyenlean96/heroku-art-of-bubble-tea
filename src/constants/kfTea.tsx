@@ -117,16 +117,28 @@ const LATTE = [
     syrup: '3ts 2ts 1ts',
     tea: null,
     water: '100-80-60',
+    milk: '180-140-120',
     honey: '0.6-0.4-0.3',
     note: null,
   },
-];
-const LATTE1 = [
-  'Pearl Latte with Brown Sugar',
-  'Black Tea Latte',
-  'Chocolate Latte',
-  'Pearl Matcha Latte',
-  'Pearl Taro Latte',
+  {
+    name: 'Pearl Matcha Latte',
+    syrup: '34-26-22g',
+    tea: null,
+    water: '100-80-60',
+    milk: '180-140-120',
+    honey: '0.6-0.4-0.3',
+    note: null,
+  },
+  {
+    name: 'Pearl Taro Latte',
+    syrup: null,
+    tea: null,
+    water: '60-40ml (if no pearls, add extra 40ml milk)',
+    milk: '140-120ml',
+    honey: '0.3-0.2',
+    note: 'Pearl + Taro: 100 + 120g 80 _ 90g (if no pearls, Taro: 160-120g)',
+  },
 ];
 
 const UNCATEGORIZED = [
@@ -146,25 +158,114 @@ const UNCATEGORIZED = [
     honey: '0.3',
     note: 'Sago + Taro: 130 - 160g',
   },
+  {
+    name: 'Rose Oolong Tea',
+    syrup: '72-54-44g',
+    tea: '280-200-160ml',
+    water: 'Hot water: 60-40-20ml',
+    honey: null,
+    note: null,
+  },
+  {
+    name: 'Grape Fruit Green Tea with Agar BB',
+    syrup: '2-1.5-1oz',
+    tea: 'GT: 200-160-120ml',
+    water: null,
+    honey: '0.3-0.2-0.1',
+    note: '1 buoi Agar BB: 100-80g',
+  },
+  {
+    name: 'Winter Melon with Lemon',
+    syrup: 'Lemon: 1.5-1.0-0.5oz',
+    tea: 'Winter Melon: 380-280-200ml',
+    water: null,
+    honey: null,
+    note: '1 lime',
+  },
+  {
+    name: 'Honey Lemon with Aloe Vera',
+    syrup: 'Lemon: 1.5-1.0-0.5oz',
+    tea: 'GT: 160-120-100ml',
+    water: '60-40-20ml',
+    honey: '1.6-1.2-1.0',
+    note: 'Aloe Vera: 80-65g',
+  },
+  {
+    name: 'Passion Fruit with Basil Seeds',
+    syrup: 'Passion Fruit: 3-2-1.5oz Basil Seeds: 160-120-80ml',
+    tea: null,
+    water: '180-140-100ml',
+    honey: '0.4-0.3-0,2',
+    note: null,
+  },
+  {
+    name: 'Passion Fruit QQ',
+    syrup: '2-1.5-1.0oz',
+    tea: null,
+    water: '220-160-120ml',
+    honey: '0.3-0.2-0.1',
+    note: 'Pearl/Agar J/Coconut J: 80/50/50 60/40/40',
+  },
+  {
+    name: 'Yakult Green Tea with Aloe Vera',
+    syrup: '2-1.5-1.0oz',
+    tea: 'GT: 220-160-120ml',
+    water: null,
+    honey: '1.2-0.9-0.7',
+    note: 'Aloe Vera: 80-65g',
+  },
+  {
+    name: 'Pearl Milk Green Tea with Taro',
+    syrup: 'Medium - Small',
+    tea: 'GT: 160-120ml',
+    water: null,
+    honey: '0.6-0.4',
+    note: 'Pearl + Taro: 100 + 100g/80 + 80g',
+  },
+  {
+    name: 'Coffe Milk Tea',
+    syrup: 'Large - Medium - Small Coffee: 3.5-3.0-2.5oz',
+    tea: 'BT: 120-100-80ml',
+    water: null,
+    honey: '1.2-1.0-0.8',
+    note: null,
+  },
+  {
+    name: 'Matcha Milk Tea with Redbean',
+    syrup: 'Matcha: 34-26-22g Milk Powder: Nho -2t.s-1.5t.s',
+    tea: null,
+    water: 'Hot water: 140-120-80ml',
+    honey: '0.6-0.4-0.3',
+    note: 'Red Bean: 80-65g',
+  },
 ];
-const UNCATEGORIZED1 = [
-  'Rose Oolong Tea',
-  'Grape Fruit Green Tea with Agar BB',
-  'Winter Melon with Lemon',
-  'Honey Lemon with Aloe Vera',
-  'Passion Fruit with Basil Seeds',
-  'Passion Fruit QQ',
-  'Yakult Green Tea with Aloe Vera',
-  // ------------------------
-  'Pearl Milk Green Tea with Taro',
-  'Coffe Milk Tea',
-  'Matcha Milk Tea with Redbean',
+const FRUIT: KFTea[] = [
+  {
+    name: 'Signature Lite Fruit Tea',
+    syrup: 'Lite: 2-1.5-1 Basil Seeds: 100-80-60ml',
+    tea: 'Oolong Tea: 140-100-80ml',
+    water: 'Water: 60-40-20ml',
+    honey: '0.5-0.4-0.3',
+    note: '1 Grape F + 3/2 Orange + 3/2 Apple',
+  },
+  {
+    name: 'Mango Fruit Tea',
+    syrup: '86-64-54g',
+    tea: 'GT: 240-180-140ml',
+    water: null,
+    honey: '0.5-0.3-0.2',
+    note: null,
+  },
+  {
+    name: 'Passion Fruit Green Tea',
+    syrup: '2-1.5-1.0oz',
+    tea: 'GT: 240-180-140ml',
+    water: null,
+    honey: '0.8-0.6-0.4',
+    note: null,
+  },
 ];
-
-const FRUIT = [
-  'Signature Lite Fruit Tea',
-  'Manga Fruit Tea',
-  'Passion Fruit Green Tea',
+const FRUIT1 = [
   'Cranberry Green Tea',
   'Plum Green Tea',
   'Special Plum Juice',
@@ -181,4 +282,4 @@ const MILK_TEA = [
   'Rose Milk Tea',
 ];
 
-export const KF_TEA_LIST = CMF.concat(ORIGINAL, LATTE, UNCATEGORIZED);
+export const KF_TEA_LIST = CMF.concat(ORIGINAL, LATTE, UNCATEGORIZED, FRUIT);

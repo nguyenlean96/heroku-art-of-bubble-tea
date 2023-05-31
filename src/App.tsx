@@ -28,7 +28,9 @@ function App() {
               <MDBListGroupItem key={tea.name.toUpperCase()}>
                 <p>{tea.name}</p>
                 <div>Syrup/Powder: {tea.syrup}</div>
-                <div>Tea/Water: {tea.tea}</div>
+                <div>Tea: {tea.tea}</div>
+                <div>Water: {tea.water}</div>
+                <div>Milk: {tea.milk}</div>
                 <div>Honey: {tea.honey}</div>
                 <div>Note: {tea.note}</div>
               </MDBListGroupItem>
