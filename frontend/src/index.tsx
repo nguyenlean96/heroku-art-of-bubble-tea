@@ -1,19 +1,19 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import LandingPage from './routes/page';
 import RecipesPage from './routes/recipes/page';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
-    element: <LandingPage />,
+    Component: LandingPage,
   },
   {
     path: '/recipes',
-    element: <RecipesPage />,
-  },
+    Component: RecipesPage
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as Element).render(
