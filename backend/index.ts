@@ -21,6 +21,7 @@ if (dev) {
   app.use(webpackDev.comp).use(webpackDev.hot);
 }
 app.get('/', (req: express.Request, res: express.Response) => {
+  console.log('????????')
   res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
 });
 

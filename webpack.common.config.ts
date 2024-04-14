@@ -29,6 +29,17 @@ const config: WebpackConfig = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/[hash][ext][query]'
+        }
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader'
+      }
     ],
   },
   resolve: {
@@ -38,6 +49,7 @@ const config: WebpackConfig = {
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
+      favicon: 'public/favicon.ico',
       minify: {
         collapseWhitespace: true,
         removeComments: true,
