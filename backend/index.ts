@@ -28,6 +28,7 @@ app.get('/', (req: express.Request, res: express.Response) => {
   res.send('Hello')
 });
 
+// link the routes to the app (postman testing/localhost testing)
 app.use('/api/recipe', recipesRouter);
 app.use('/api/order', ordersRouter);
 

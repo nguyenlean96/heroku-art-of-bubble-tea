@@ -1,13 +1,19 @@
+/**
+ * file order.ts contains the route for generating a random drink order.
+ */
 import { Request, Response, Router } from "express";
-import { ORDER_LIST } from "../db/seeds/orders";
-import getRandomOrder from "../queries/orders";
+import { generateRandomDrink } from "../controller/logic";
 
 const ordersRouter = Router();
 
-// Get random oder
-ordersRouter.get("/", async(req: Request, res: Response) => {
+
+// 3. Kien
+// 
+// Kien chỉnh sửa lại file orders.ts để sử dụng generateRandomDrink() method từ logic.ts.
+//
+ordersRouter.get("/", async (req: Request, res: Response) => {
   try {
-    const orderResult = await getRandomOrder(ORDER_LIST);
+    const orderResult = await generateRandomDrink();
     res.status(200).json(orderResult);
   } catch (error) {
     console.error((error as Error).message);
