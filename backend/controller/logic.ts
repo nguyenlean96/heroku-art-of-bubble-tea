@@ -1,7 +1,6 @@
 /**
  * logic.ts file implement the logic for generating random drink orders.
  */
-
 import { toppings, milks, sweetnessLevels, iceLevels, cupSizes, drinksWithoutMilk, drinksWithMilk } from '../db/data/drinkData';
 
 // 2. Kien
