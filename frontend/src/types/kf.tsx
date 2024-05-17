@@ -15,6 +15,7 @@ export type KFTea = {
 export type KFTeaDrink = {
   name: string;
   availability: boolean | string;
+  label?: Set<Label>;
   note: string | null;
   recipes: RecipeDrink[];
 };
@@ -26,8 +27,16 @@ export type RecipeDrink = {
   milk: Data[] | null;
   honey: Data[] | null;
   powder: Data[] | null;
+  toppings?: Data[];
+  type?: Recipe;
 };
-
+export enum Label {
+  NEW='New product',
+  COLD='Offered Cold',
+  HOT='Offered Hot',
+  RECOMMEND='Recommend',
+  MILK='MILK'
+}
 export type Data = {
   value: string | number;
   unit: Unit;
