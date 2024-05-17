@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useKungfuData from '../../hooks/useKungfuData';
 import { KFTea, Recipe } from '../../types/kf';
 
@@ -16,11 +16,9 @@ export default function Test() {
 	const {
 		updateSearch,
 		recipes,
-		types,
 	}: {
 		updateSearch: Function;
-		recipes: KFTea[];
-		types: string[];
+		recipes: any[];
 	} = useKungfuData({
 		recipesCount: numberOfQuestions,
 	});
@@ -300,16 +298,9 @@ const Ingredients = ({
 				</table>
 				<div className='flex items-start gap-x-2 w-1/2 mt-3'>
 					<div className='text-gray-500 font-bold'>Toppings:</div>
-					<div className='flex flex-col gap-y-3 xl:gap-y-4 px-3 border-l-2 border-blue-500'>
+					<div className='px-3 font-light'>
 						{toppings &&
-							toppings.map((item: string, index: number) => (
-								<span
-									key={index}
-									className='font-light hover:scale-110 cursor-default transition-all ease-in-out hover:bg-blue-500 hover:text-white p-1 rounded w-full'
-								>
-									{String(item).charAt(0).toUpperCase() + String(item).slice(1)}
-								</span>
-							))}
+							toppings.join(', ')}
 					</div>
 				</div>
 			</div>
