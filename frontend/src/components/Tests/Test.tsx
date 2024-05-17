@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useKungfuData from '../../hooks/useKungfuData';
 import { KFTea, Recipe } from '../../types/kf';
 
@@ -16,11 +16,9 @@ export default function Test() {
 	const {
 		updateSearch,
 		recipes,
-		types,
 	}: {
 		updateSearch: Function;
-		recipes: KFTea[];
-		types: string[];
+		recipes: any[];
 	} = useKungfuData({
 		recipesCount: numberOfQuestions,
 	});

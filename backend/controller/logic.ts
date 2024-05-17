@@ -47,12 +47,17 @@ export const getRandomToppings = () => {
  * If the drink does not contain milk, the milk property is set to undefined or null.
  * @returns A randomly generated drink object.
  */
-export const generateRandomDrink = () => {
-	const withMilk = Math.random() < 0.5; // 50% chance of having milk
+export const generateRandomDrink = (drinkName: string = '') => {
+	let withMilk = null;
+	if (!drinkName) {
+		withMilk = Math.random() < 0.5; // 50% chance of having milk
 
-	const drinkName = withMilk
-		? getRandomItem(drinksWithMilk)
-		: getRandomItem(drinksWithoutMilk);
+		drinkName = withMilk
+			? getRandomItem(drinksWithMilk)
+			: getRandomItem(drinksWithoutMilk);
+	} else {
+		withMilk = drinksWithMilk.includes(drinkName);
+	}
 
 	const sweetness = getRandomItem(sweetnessLevels);
 	const ice = getRandomItem(iceLevels);
@@ -79,15 +84,16 @@ export const generateRandomDrink = () => {
 };
 
 export const getRandomDrinks = (numDrinks: number) => {
-	const drinks: Array<any> = [];
-	for (let i = 0; i < numDrinks; i++) {
-		let randomDrink = generateRandomDrink();
-		// While the drink name has already been selected, generate a new drink
-		while (drinks.some((drink: any) => drink.name === randomDrink.name)) {
-			randomDrink = generateRandomDrink();
-		}
-		drinks.push(randomDrink);
-	}
+	// Concatenate the drinksWithoutMilk and drinksWithMilk arrays to get all drink names
+	const drinks = drinksWithMilk.concat(drinksWithoutMilk);
 
-	return drinks;
+	const randomDrinks = drinks.sort(() => 0.5 - Math.random()).slice(0, numDrinks);
+
+	// Generate a random drink order for each drink name
+	const drinkOrders = randomDrinks.map((drink, index) => {
+		// Check whether the drink contains milk
+		return generateRandomDrink(drink);
+	});
+
+	return drinkOrders;
 };
