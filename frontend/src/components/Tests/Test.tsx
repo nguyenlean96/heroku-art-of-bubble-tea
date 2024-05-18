@@ -197,7 +197,7 @@ const AnswerDisplay = ({ answer }: { answer: any }) => {
 	return (
 		<div className='relative bg-white ring-1 ring-black ring-opacity-10 rounded-lg shadow-lg px-3 md:px-5 py-2 md:py-4 w-screen lg:w-[50vw] xl:w-[33vw]'>
 			<div className='absolute top-3 right-0'>
-				<div className='flex items-center gap-2'>
+				<div className='hidden items-center gap-2'>
 					<>
 						{availability ? (
 							<span className='rounded-l bg-lime-700 text-white text-center pl-2 p-1 font-light text-[.8em]'>
