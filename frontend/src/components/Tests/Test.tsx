@@ -264,11 +264,11 @@ const Ingredients = ({
 			</div>
 			<div
 				className={
-					'flex flex-col lg:flex-row items-start justify-between px-3 lg:px-4' +
+					'px-3 lg:px-4' +
 					(show && ' py-3 border-x')
 				}
 			>
-				<table>
+				<table className='w-full'>
 					{Object.keys(ingredients).map((key: string, index: number) => (
 						<tr key={index}>
 							<th className='text-left text-gray-500'>
@@ -296,8 +296,8 @@ const Ingredients = ({
 						</tr>
 					))}
 				</table>
-				<div className='flex items-start gap-x-2 w-1/2 mt-3'>
-					<div className='text-gray-500 font-bold'>Toppings:</div>
+				<div className='w-full mt-3'>
+					<div className='text-gray-500 font-bold mb-2'>Toppings:</div>
 					<div className='px-3 font-light'>
 						{toppings &&
 							toppings.join(', ')}
