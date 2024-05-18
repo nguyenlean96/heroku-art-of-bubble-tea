@@ -1,135 +1,120 @@
-import { FluidUnit, KFTeaDrink, Label, WeightUnit, PowderUnit } from '../types/kf';
+import { KFTeaDrink } from "@backend/types/kf";
 
-export const UNCATEGORIZED_NEW: KFTeaDrink[] = [
+export const UNCATEGORIZED: KFTeaDrink[] = [
   {
     name: 'Power Taro Pudding Pearl Milk',
+    label: ['COLD'],
     availability: true,
     note: 'Pearl Pudding Taro: 80 + 100 + 160',
     recipes: [
       {
-        syrup: null,
-        tea: null,
-        water: null,
         milk: [
           {
             value: 200,
-            unit: FluidUnit.ml,
+            unit: 'ml',
           },
         ],
-        honey: null,
-        powder: null,
       },
     ],
   },
   {
     name: 'Taro Sago',
+    label: ['COLD'],
     availability: true,
     note: 'Sago + Taro: 130 - 160g',
     recipes: [
       {
-        syrup: null,
-        tea: null,
-        water: null,
         milk: [
           {
             value: 200,
-            unit: FluidUnit.ml,
+            unit: 'ml',
           },
         ],
         honey: [
           {
             value: 0.3,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
     ],
   },
   {
     name: 'Rose Oolong Tea',
     availability: true,
-    note: null,
+    label: ['COLD'],
     recipes: [
       {
         syrup: [
           {
             value: 72,
-            unit: WeightUnit.g,
+            unit: 'g',
           },
         ],
         tea: [
           {
             value: 280,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Olong Tea',
           },
         ],
         water: [
           {
             value: 60,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'hot',
           },
         ],
-        milk: null,
-        honey: null,
-        powder: null,
       },
       {
         syrup: [
           {
             value: 54,
-            unit: WeightUnit.g,
+            unit: 'g',
           },
         ],
         tea: [
           {
             value: 200,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Olong Tea',
           },
         ],
         water: [
           {
             value: 40,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'hot',
           },
         ],
-        milk: null,
-        honey: null,
-        powder: null,
       },
       {
         syrup: [
           {
             value: 44,
-            unit: WeightUnit.g,
+            unit: 'g',
           },
         ],
         tea: [
           {
             value: 160,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Olong Tea',
           },
         ],
         water: [
           {
             value: 20,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'hot',
           },
         ],
-        milk: null,
-        honey: null,
-        powder: null,
       },
     ],
   },
   {
     name: 'Grape Fruit Green Tea with Agar BB',
+    label: ['COLD'],
     availability: true,
     note: '1 buoi Agar BB: 100-80g',
     recipes: [
@@ -137,78 +122,73 @@ export const UNCATEGORIZED_NEW: KFTeaDrink[] = [
         syrup: [
           {
             value: 2,
-            unit: FluidUnit.oz,
+            unit: 'oz',
           },
         ],
         tea: [
           {
             value: 200,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Green Tea',
           },
         ],
-        water: null,
-        milk: null,
+
         honey: [
           {
             value: 0.3,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
       {
         syrup: [
           {
             value: 1.5,
-            unit: FluidUnit.oz,
+            unit: 'oz',
           },
         ],
         tea: [
           {
             value: 160,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Green Tea',
           },
         ],
-        water: null,
-        milk: null,
+
         honey: [
           {
             value: 0.2,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
       {
         syrup: [
           {
             value: 1,
-            unit: FluidUnit.oz,
+            unit: 'oz',
           },
         ],
         tea: [
           {
             value: 120,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Green Tea',
           },
         ],
-        water: null,
-        milk: null,
+
         honey: [
           {
             value: 0.1,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
     ],
   },
   {
     name: 'Winter Melon with Lemon',
+    label: ['COLD'],
     availability: false,
     note: '1 lime',
     recipes: [
@@ -216,63 +196,52 @@ export const UNCATEGORIZED_NEW: KFTeaDrink[] = [
         syrup: [
           {
             value: 1.5,
-            unit: FluidUnit.oz,
+            unit: 'oz',
           },
         ],
         tea: [
           {
             value: 380,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Winter Melon Tea',
           },
         ],
-        water: null,
-        milk: null,
-        honey: null,
-        powder: null,
       },
       {
         syrup: [
           {
             value: 1,
-            unit: FluidUnit.oz,
+            unit: 'oz',
           },
         ],
         tea: [
           {
             value: 280,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Winter Melon Tea',
           },
         ],
-        water: null,
-        milk: null,
-        honey: null,
-        powder: null,
       },
       {
         syrup: [
           {
             value: 0.5,
-            unit: FluidUnit.oz,
+            unit: 'oz',
           },
         ],
         tea: [
           {
             value: 200,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Winter Melon Tea',
           },
         ],
-        water: null,
-        milk: null,
-        honey: null,
-        powder: null,
       },
     ],
   },
   {
     name: 'Honey Lemon with Aloe Vera',
+    label: ['COLD'],
     availability: true,
     note: 'Aloe Vera: 80-65g',
     recipes: [
@@ -280,187 +249,182 @@ export const UNCATEGORIZED_NEW: KFTeaDrink[] = [
         syrup: [
           {
             value: 1.5,
-            unit: FluidUnit.oz,
+            unit: 'oz',
           },
         ],
         tea: [
           {
             value: 160,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Green Tea',
           },
         ],
         water: [
           {
             value: 60,
-            unit: FluidUnit.ml,
+            unit: 'ml',
           },
         ],
-        milk: null,
+
         honey: [
           {
             value: 1.6,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
       {
         syrup: [
           {
             value: 1,
-            unit: FluidUnit.oz,
+            unit: 'oz',
           },
         ],
         tea: [
           {
             value: 120,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Green Tea',
           },
         ],
         water: [
           {
             value: 40,
-            unit: FluidUnit.ml,
+            unit: 'ml',
           },
         ],
-        milk: null,
+
         honey: [
           {
             value: 1.2,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
       {
         syrup: [
           {
             value: 0.5,
-            unit: FluidUnit.oz,
+            unit: 'oz',
           },
         ],
         tea: [
           {
             value: 100,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Green Tea',
           },
         ],
         water: [
           {
             value: 20,
-            unit: FluidUnit.ml,
+            unit: 'ml',
           },
         ],
-        milk: null,
+
         honey: [
           {
             value: 1,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
     ],
   },
   {
     name: 'Passion Fruit with Basil Seeds',
     availability: true,
-    note: null,
+    label: ['COLD'],
     recipes: [
       {
         syrup: [
           {
             value: 3,
-            unit: FluidUnit.oz,
+            unit: 'oz',
             note: 'Passion Fruit',
           },
           {
             value: 160,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Basil Seeds',
           },
         ],
-        tea: null,
+
         water: [
           {
             value: 180,
-            unit: FluidUnit.ml,
+            unit: 'ml',
           },
         ],
-        milk: null,
+
         honey: [
           {
             value: 0.4,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
       {
         syrup: [
           {
             value: 2,
-            unit: FluidUnit.oz,
+            unit: 'oz',
             note: 'Passion Fruit',
           },
           {
             value: 120,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Basil Seeds',
           },
         ],
-        tea: null,
+
         water: [
           {
             value: 140,
-            unit: FluidUnit.ml,
+            unit: 'ml',
           },
         ],
-        milk: null,
+
         honey: [
           {
             value: 0.3,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
       {
         syrup: [
           {
             value: 1.5,
-            unit: FluidUnit.oz,
+            unit: 'oz',
             note: 'Passion Fruit',
           },
           {
             value: 80,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Basil Seeds',
           },
         ],
-        tea: null,
+
         water: [
           {
             value: 100,
-            unit: FluidUnit.ml,
+            unit: 'ml',
           },
         ],
-        milk: null,
+
         honey: [
           {
             value: 0.2,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
     ],
   },
   {
     name: 'Passion Fruit QQ',
+    label: ['COLD'],
     availability: true,
     note: 'Pearl/Agar J/Coconut J: 80/50/50 60/40/40',
     recipes: [
@@ -468,78 +432,76 @@ export const UNCATEGORIZED_NEW: KFTeaDrink[] = [
         syrup: [
           {
             value: 2,
-            unit: FluidUnit.oz,
+            unit: 'oz',
             note: 'Passion Fruit',
           },
         ],
-        tea: null,
+
         water: [
           {
             value: 220,
-            unit: FluidUnit.ml,
+            unit: 'ml',
           },
         ],
-        milk: null,
+
         honey: [
           {
             value: 0.3,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
       {
         syrup: [
           {
             value: 1.5,
-            unit: FluidUnit.oz,
+            unit: 'oz',
             note: 'Passion Fruit',
           },
         ],
-        tea: null,
+
         water: [
           {
             value: 160,
-            unit: FluidUnit.ml,
+            unit: 'ml',
           },
         ],
-        milk: null,
+
         honey: [
           {
             value: 0.2,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
       {
         syrup: [
           {
             value: 1,
-            unit: FluidUnit.oz,
+            unit: 'oz',
             note: 'Passion Fruit',
           },
         ],
-        tea: null,
+
         water: [
           {
             value: 120,
-            unit: FluidUnit.ml,
+            unit: 'ml',
           },
         ],
-        milk: null,
+
         honey: [
           {
             value: 0.1,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
     ],
   },
   {
     name: 'Yakult Green Tea with Aloe Vera',
+    label: ['COLD'],
     availability: true,
     note: 'Aloe Vera: 80-65g',
     recipes: [
@@ -547,102 +509,95 @@ export const UNCATEGORIZED_NEW: KFTeaDrink[] = [
         syrup: [
           {
             value: 2,
-            unit: FluidUnit.oz,
+            unit: 'oz',
           },
         ],
         tea: [
           {
             value: 220,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Green Tea',
           },
         ],
-        water: null,
-        milk: null,
+
         honey: [
           {
             value: 1.2,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
       {
         syrup: [
           {
             value: 1.5,
-            unit: FluidUnit.oz,
+            unit: 'oz',
           },
         ],
         tea: [
           {
             value: 160,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Green Tea',
           },
         ],
-        water: null,
-        milk: null,
+
         honey: [
           {
             value: 0.9,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
       {
         syrup: [
           {
             value: 1,
-            unit: FluidUnit.oz,
+            unit: 'oz',
           },
         ],
         tea: [
           {
             value: 120,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Green Tea',
           },
         ],
-        water: null,
-        milk: null,
+
         honey: [
           {
             value: 0.7,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
     ],
   },
   {
     name: 'Pearl Milk Green Tea with Taro',
+    label: ['COLD'],
     availability: true,
     note: 'Pearl + Taro: 100 + 100g/80 + 80g',
     recipes: [
       {
-        syrup: null,
         tea: [
           {
             value: 160,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Green Tea',
           },
         ],
-        water: null,
-        milk: null,
+
         honey: [
           {
             value: 0.4,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
         powder: [
           {
-            value: PowderUnit.med,
-            unit: PowderUnit.med,
+            value: 'med',
+            unit: 'med',
             note: 'milk powder',
           },
         ],
@@ -650,62 +605,59 @@ export const UNCATEGORIZED_NEW: KFTeaDrink[] = [
       {
         syrup: [
           {
-            value: PowderUnit.sm,
-            unit: PowderUnit.sm,
+            value: 'sm',
+            unit: 'sm',
             note: 'milk powder',
           },
         ],
         tea: [
           {
             value: 120,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Green Tea',
           },
         ],
-        water: null,
-        milk: null,
+
         honey: [
           {
             value: 0.6,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
-        powder: null,
       },
     ],
   },
   {
     name: 'Coffe Milk Tea',
     availability: true,
-    note: null,
+    label: ['COLD'],
     recipes: [
       {
         syrup: [
           {
             value: 3.5,
-            unit: FluidUnit.oz,
+            unit: 'oz',
             note: 'Coffee',
           },
         ],
         tea: [
           {
             value: 120,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Black Tea',
           },
         ],
-        water: null,
-        milk: null,
+
         honey: [
           {
             value: 1.2,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
         powder: [
           {
             value: 'large',
-            unit: PowderUnit.lg,
+            unit: 'lg',
             note: 'milk powder',
           },
         ],
@@ -714,29 +666,28 @@ export const UNCATEGORIZED_NEW: KFTeaDrink[] = [
         syrup: [
           {
             value: 3,
-            unit: FluidUnit.oz,
+            unit: 'oz',
             note: 'Coffee',
           },
         ],
         tea: [
           {
             value: 100,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Black Tea',
           },
         ],
-        water: null,
-        milk: null,
+
         honey: [
           {
             value: 1,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
         powder: [
           {
-            value: PowderUnit.med,
-            unit: PowderUnit.med,
+            value: 'med',
+            unit: 'med',
             note: 'milk powder',
           },
         ],
@@ -745,29 +696,28 @@ export const UNCATEGORIZED_NEW: KFTeaDrink[] = [
         syrup: [
           {
             value: 2.5,
-            unit: FluidUnit.oz,
+            unit: 'oz',
             note: 'Coffee',
           },
         ],
         tea: [
           {
             value: 80,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'Black Tea',
           },
         ],
-        water: null,
-        milk: null,
+
         honey: [
           {
             value: 0.8,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
         powder: [
           {
-            value: PowderUnit.sm,
-            unit: PowderUnit.sm,
+            value: 'sm',
+            unit: 'sm',
             note: 'milk powder',
           },
         ],
@@ -776,95 +726,90 @@ export const UNCATEGORIZED_NEW: KFTeaDrink[] = [
   },
   {
     name: 'Matcha Milk Tea with Redbean',
+    label: ['COLD'],
     availability: true,
     note: 'Red Bean: 80-65g',
     recipes: [
       {
-        syrup: null,
-        tea: null,
         water: [
           {
             value: 140,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'hot',
           },
         ],
-        milk: null,
+
         honey: [
           {
             value: 0.6,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
         powder: [
           {
             value: 34,
-            unit: WeightUnit.g,
+            unit: 'g',
             note: 'Matcha',
           },
           {
-            value: PowderUnit.sm,
-            unit: PowderUnit.sm,
+            value: 'sm',
+            unit: 'sm',
             note: 'Milk Powder',
           },
         ],
       },
       {
-        syrup: null,
-        tea: null,
         water: [
           {
             value: 120,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'hot',
           },
         ],
-        milk: null,
+
         honey: [
           {
             value: 0.4,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
         powder: [
           {
             value: 26,
-            unit: WeightUnit.g,
+            unit: 'g',
             note: 'Matcha',
           },
           {
             value: 2,
-            unit: PowderUnit.ts,
+            unit: 'ts',
             note: 'Milk Powder',
           },
         ],
       },
       {
-        syrup: null,
-        tea: null,
         water: [
           {
             value: 80,
-            unit: FluidUnit.ml,
+            unit: 'ml',
             note: 'hot',
           },
         ],
-        milk: null,
+
         honey: [
           {
             value: 0.3,
-            unit: FluidUnit.honey,
+            unit: 'honey',
           },
         ],
         powder: [
           {
             value: 22,
-            unit: WeightUnit.g,
+            unit: 'g',
             note: 'Matcha',
           },
           {
             value: 1.5,
-            unit: PowderUnit.ts,
+            unit: 'ts',
             note: 'Milk Powder',
           },
         ],

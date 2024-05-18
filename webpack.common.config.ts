@@ -47,6 +47,9 @@ const config: WebpackConfig = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      '@backend': path.resolve(__dirname, 'backend')
+    }
   },
   plugins: [
     new webpack.ProgressPlugin(),

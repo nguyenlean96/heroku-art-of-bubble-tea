@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import useKungfuData from '../../hooks/useKungfuData';
-import { KFTea, Recipe } from '../../types/kf';
+import { KFTea, Recipe } from '../../../../backend/types/kf';
 
 interface customKFTea extends KFTea {
 	id: number;
