@@ -301,7 +301,7 @@ const Ingredients = ({
 					}
 				</table>
 				<div className='w-full mt-3'>
-					<div className='text-gray-500 font-bold mb-2'>Toppings:</div>
+					<div className='text-gray-500 font-bold mb-2'>Toppings ({toppings.length}):</div>
 					<div className='px-3 font-light'>
 						{toppings &&
 							toppings.join(', ')}
