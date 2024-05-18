@@ -269,32 +269,36 @@ const Ingredients = ({
 				}
 			>
 				<table className='w-full'>
-					{Object.keys(ingredients).map((key: string, index: number) => (
-						<tr key={index}>
-							<th className='text-left text-gray-500'>
-								{
-									// Capitalize the first letter of the key
-									String(key).charAt(0).toUpperCase() + String(key).slice(1)
-								}
-							</th>
-							<td>
-								<div className='p-2'>
-									{ingredients[key] &&
-										// If the ingredients[key] is an array, then map through the array and display the items
-										!Array.isArray(ingredients[key]) &&
-										String(ingredients[key]).length > 0 && (
-											<>
-												<span className='text-gray-600 dark:text-gray-300'></span>
-												<span className='text-gray-800 dark:text-gray-200'>
-													{String(ingredients[key]).charAt(0).toUpperCase() +
-														String(ingredients[key]).slice(1)}
-												</span>
-											</>
-										)}
-								</div>
-							</td>
-						</tr>
-					))}
+					{ingredients && 
+						<tbody>
+							{Object.keys(ingredients).map((key: string, index: number) => (
+								<tr key={index}>
+									<th className='text-left text-gray-500'>
+										{
+											// Capitalize the first letter of the key
+											String(key).charAt(0).toUpperCase() + String(key).slice(1)
+										}
+									</th>
+									<td>
+										<div className='p-2'>
+											{ingredients[key] &&
+												// If the ingredients[key] is an array, then map through the array and display the items
+												!Array.isArray(ingredients[key]) &&
+												String(ingredients[key]).length > 0 && (
+													<>
+														<span className='text-gray-600 dark:text-gray-300'></span>
+														<span className='text-gray-800 dark:text-gray-200'>
+															{String(ingredients[key]).charAt(0).toUpperCase() +
+																String(ingredients[key]).slice(1)}
+														</span>
+													</>
+												)}
+										</div>
+									</td>
+								</tr>
+							))}
+						</tbody>
+					}
 				</table>
 				<div className='w-full mt-3'>
 					<div className='text-gray-500 font-bold mb-2'>Toppings:</div>
