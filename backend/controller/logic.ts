@@ -31,14 +31,17 @@ export const getRandomItem = (arr: string[]) => arr[Math.floor(Math.random() * a
  */
 export const getRandomToppings = () => {
 	const numToppings = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10 (defines the number of toppings)
-	const uniqueToppings = new Set<string>(); // Use a Set<string>() to ensure no duplicate toppings
+	// const uniqueToppings = new Set<string>(); // Use a Set<string>() to ensure no duplicate toppings
 
 	// while uniqueToppings size is less than numToppings, keep adding a random topping until it reaches numToppings
-	while (uniqueToppings.size < numToppings) {
-		uniqueToppings.add(getRandomItem(toppings));
-	}
+	// while (uniqueToppings.size < numToppings) {
+	// 	uniqueToppings.add(getRandomItem(toppings));
+	// }
 
-	return Array.from(uniqueToppings);
+	// return Array.from(uniqueToppings);
+
+	return toppings.sort(() => 0.5 - Math.random()).slice(0, numToppings)
+		.map((topping) => topping.charAt(0).toUpperCase() + topping.slice(1));
 };
 
 /**
@@ -48,16 +51,7 @@ export const getRandomToppings = () => {
  * @returns A randomly generated drink object.
  */
 export const generateRandomDrink = (drinkName: string = '') => {
-	let withMilk = null;
-	if (!drinkName) {
-		withMilk = Math.random() < 0.5; // 50% chance of having milk
-
-		drinkName = withMilk
-			? getRandomItem(drinksWithMilk)
-			: getRandomItem(drinksWithoutMilk);
-	} else {
-		withMilk = drinksWithMilk.includes(drinkName);
-	}
+	const withMilk = drinksWithMilk.includes(drinkName);
 
 	const sweetness = getRandomItem(sweetnessLevels);
 	const ice = getRandomItem(iceLevels);
@@ -74,46 +68,6 @@ export const generateRandomDrink = (drinkName: string = '') => {
 		milk: withMilk ? getRandomItem(milks) : 'No milks',
 	};
 
-	// Add a note for the the drink
-	if (drinkName === 'Pearl Taro Latte') {
-		drinkObject['note'] = 'Pearl + Taro: 100 + 120g 80 _ 90g. If no pearls, Taro: 160-120g, if no pearls, add extra 40ml milk';
-	} else if (drinkName === 'CMF Chocolate') {
-		drinkObject['note'] = 'steam';
-	} else if (drinkName === 'CMF Matcha') {
-		drinkObject['note'] = 'cold then steam';
-	} else if (drinkName === 'Winter Melon Drink') {
-		drinkObject['note'] = 'tea: 380 (40ml water)-300-240ml';
-	} else if (drinkName === 'Pearl Latte with Brown Sugar') {
-		drinkObject['note'] = 'Pearl 180-120';
-	} else if (drinkName === 'Black Tea Latte') {
-		drinkObject['note'] = 'Can change to green tea or Oolong';
-	} else if (drinkName === 'Power Taro Pudding Pearl Milk') {
-		drinkObject['note'] = 'Pearl Pudding Taro: 80 + 100 + 160';
-	} else if (drinkName === 'Taro Sago') {
-		drinkObject['note'] = 'Sago + Taro: 130 - 160g';
-	} else if (drinkName === 'Rose Oolong Tea') {
-		drinkObject['note'] = 'hot';
-	} else if (drinkName === 'Grape Fruit Green Tea with Agar BB') {
-		drinkObject['note'] = '1 buoi Agar BB: 100-80g';
-	} else if (drinkName === 'Winter Melon with Lemon') {
-		drinkObject['note'] = 'Winter Melon Tea, and 1 lime';
-	} else if (drinkName === 'Honey Lemon with Aloe Vera') {
-		drinkObject['note'] = 'Green Tea, Aloe Vera: 65g-80g';
-	} else if (drinkName === 'Passion Fruit QQ') {
-		drinkObject['note'] = 'Pearl/Agar J/Coconut J: 80/50/50 60/40/40';
-	} else if (drinkName === 'Yakult Green Tea with Aloe Vera') {
-		drinkObject['note'] = 'Aloe Vera: 65g-80g';
-	} else if (drinkName === 'Pearl Milk Green Tea with Taro') {
-		drinkObject['note'] = 'milk powder, green tea, Pearl + Taro: 100 + 100g/80 + 80g';
-	} else if (drinkName === 'Coffe Milk Tea') {
-		drinkObject['note'] = 'milk powder, black tea, coffee';
-	} else if (drinkName === 'Matcha Milk Tea with Redbean') {
-		drinkObject['note'] = 'milk powder, matcha, hot, red bean: 65g-80g';
-	} else if (drinkName === 'Signature Lite Fruit Tea') {
-		drinkObject['note'] = 'Lite syrup, Basil Seeds, Oolong tea, 1 Grape F + 3/2 Orange + 3/2 Apple';
-	} else if (drinkName === 'Mango Fruit Tea') {
-		drinkObject['note'] = 'green tea';
-	}
 	return drinkObject;
 };
 
