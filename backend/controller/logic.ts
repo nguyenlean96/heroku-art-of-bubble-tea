@@ -2,14 +2,14 @@
  * logic.ts file implement the logic for generating random drink orders.
  */
 import {
-	toppings,
-	milks,
-	sweetnessLevels,
-	iceLevels,
-	cupSizes,
-	drinksWithoutMilk,
-	drinksWithMilk,
-} from '../db/data/drinkData';
+  toppings,
+  milks,
+  sweetnessLevels,
+  iceLevels,
+  cupSizes,
+  drinksWithMilk,
+  allDrinks,
+} from '../db/data/kungfu/order-options';
 
 // 2. Kien
 //
@@ -51,37 +51,38 @@ export const getRandomToppings = () => {
  * @returns A randomly generated drink object.
  */
 export const generateRandomDrink = (drinkName: string = '') => {
-	const withMilk = drinksWithMilk.includes(drinkName);
+  const withMilk = drinksWithMilk.includes(drinkName);
 
-	const sweetness = getRandomItem(sweetnessLevels);
-	const ice = getRandomItem(iceLevels);
-	const cupSize = getRandomItem(cupSizes);
-	const toppings = getRandomToppings();
+  const sweetness = getRandomItem(sweetnessLevels);
+  const ice = getRandomItem(iceLevels);
+  const cupSize = getRandomItem(cupSizes);
+  const toppings = getRandomToppings();
 
-	// Construct the drink object with or without the note based on the condition
-	const drinkObject: any = {
-		name: drinkName,
-		sweetness: sweetness,
-		ice: ice,
-		cupSize: cupSize,
-		toppings: toppings,
-		milk: withMilk ? getRandomItem(milks) : 'No milks',
-	};
+  // Construct the drink object with or without the note based on the condition
+  const drinkObject: any = {
+    name: drinkName,
+    sweetness: sweetness,
+    ice: ice,
+    cupSize: cupSize,
+    toppings: toppings,
+    ...(withMilk && { milks: getRandomItem(milks) }),
+  };
 
-	return drinkObject;
+  return drinkObject;
 };
 
 export const getRandomDrinks = (numDrinks: number) => {
-	// Concatenate the drinksWithoutMilk and drinksWithMilk arrays to get all drink names
-	const drinks = drinksWithMilk.concat(drinksWithoutMilk);
+  // Concatenate the drinksWithoutMilk and drinksWithMilk arrays to get all drink names
+  const drinks = [...allDrinks];
 
-	const randomDrinks = drinks.sort(() => 0.5 - Math.random()).slice(0, numDrinks);
+  const randomDrinks = drinks
+    .sort(() => 0.5 - Math.random())
+    .slice(0, numDrinks);
 
-	// Generate a random drink order for each drink name
-	const drinkOrders = randomDrinks.map((drink, index) => {
-		// Check whether the drink contains milk
-		return generateRandomDrink(drink);
-	});
+  // Generate a random drink order for each drink name
+  const drinkOrders = randomDrinks.map((drink) => {
+    return generateRandomDrink(drink);
+  });
 
-	return drinkOrders;
+  return drinkOrders;
 };

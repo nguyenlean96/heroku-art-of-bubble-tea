@@ -2,6 +2,8 @@
  * file contains arrays of strings representing different drink options.
  */
 
+import { KF_TEA_LIST } from '.';
+
 // 1. Kien
 //
 // Kiên chỉnh sửa file seeds/order.ts thành file data/drinkData.ts để sử dụng dữ liệu trong các method của controller/logic.ts.
@@ -76,7 +78,9 @@ export const drinksWithoutMilk: string[] = [
   'Coffee Milk Tea',
   'Matcha Milk Tea with Red bean',
 ];
-
+export const allDrinks = KF_TEA_LIST.filter((tea) => tea.availability).map(
+  (tea) => tea.name
+);
 export const drinksWithMilk: string[] = [
   'Pearl Latte with Brown Sugar',
   'Black Tea Latte',
