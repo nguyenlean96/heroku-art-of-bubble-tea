@@ -5,9 +5,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./backend/index.ts",
-    "build": "NODE_ENV=production webpack --config webpack.prod.config.ts",
+    "localbuild": "NODE_ENV=development webpack --config webpack.prod.config.ts",
     "predeploy": "npm run build",
-    "deploy": "node deploy.js"
+    "deploy": "node deploy.js",
+    "build": "NODE_ENV=production PORT=80 webpack --config webpack.prod.config.ts"
   },
   "devDependencies": {
     "@babel/preset-env": "7.24.4",
