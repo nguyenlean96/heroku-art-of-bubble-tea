@@ -12,9 +12,9 @@ import cors from 'cors';
 // import debug from 'debug';
 import webpackDev from './dev';
 
-const dev = process.env.NODE_ENV !== 'production';
+const dev = (process.env.NODE_ENV ?? 'production') !== 'production';
 const app: express.Application = express();
-const port = process.env.PORT || 3000;
+const port = (process.env.PORT ?? 80) || 3000;
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
 app.use(express.json())

@@ -1,6 +1,6 @@
 module.exports = (api) => {
   // This caches the Babel config
-  api.cache.using(() => process.env.NODE_ENV);
+  api.cache.using(() => process.env.NODE_ENV ?? 'production');
   return {
     presets: [
       '@babel/preset-env',
