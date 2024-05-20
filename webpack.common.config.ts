@@ -2,6 +2,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack, { Configuration as WebpackConfig } from 'webpack';
+import Dotenv from 'dotenv-webpack';
 
 const config: WebpackConfig = {
   entry: path.join(__dirname, 'frontend', 'src', 'index.tsx'),
@@ -52,6 +53,7 @@ const config: WebpackConfig = {
     }
   },
   plugins: [
+    new Dotenv(),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
